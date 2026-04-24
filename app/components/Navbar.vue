@@ -28,23 +28,29 @@
           v-for="link in navLinks"
           :key="link.to"
           :to="link.to"
-          class="relative px-6 py-2 rounded-full transition-all duration-500 overflow-hidden group"
-          :class="[
-            $route.path === link.to
-              ? 'bg-interactive text-background shadow-lg shadow-primary/20'
-              : 'hover:bg-primary/5 text-foreground/70 hover:text-primary',
-          ]"
+          custom
+          v-slot="{ isActive, navigate }"
         >
-          <span
-            class="relative z-10 text-[11px] font-bold tracking-[0.2em] uppercase"
+          <a
+            @click="navigate"
+            class="relative px-6 py-2 rounded-full transition-all duration-500 overflow-hidden group cursor-pointer"
+            :class="[
+              isActive
+                ? 'bg-interactive text-background shadow-lg shadow-primary/20'
+                : 'hover:bg-primary/5 text-foreground/70 hover:text-primary',
+            ]"
           >
-            {{ link.label }}
-          </span>
-          <!-- Subtle Glow effect on active -->
-          <div
-            v-if="$route.path === link.to"
-            class="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent"
-          ></div>
+            <span
+              class="relative z-10 text-[11px] font-bold tracking-[0.2em] uppercase"
+            >
+              {{ link.label }}
+            </span>
+            <!-- Subtle Glow effect on active -->
+            <div
+              v-if="isActive"
+              class="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent"
+            ></div>
+          </a>
         </NuxtLink>
       </div>
 
