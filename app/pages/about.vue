@@ -61,7 +61,7 @@
 
     <!-- Values Grid -->
     <section
-      class="values-section mb-48 bg-secondary/10 rounded-[4rem] p-12 md:p-24 opacity-0 scale-[0.98]"
+      class="values-section mb-32 md:mb-48 bg-secondary/10 rounded-[2.5rem] md:rounded-[4rem] p-8 md:p-24 opacity-0 scale-[0.98]"
     >
       <div class="text-center mb-20">
         <h2 class="font-serif text-5xl md:text-6xl mb-6">
@@ -88,7 +88,7 @@
 
     <!-- Mission -->
     <div
-      class="mission-box text-center max-w-4xl mx-auto mb-32 border border-muted p-16 md:p-24 rounded-full opacity-0 scale-[0.9] blur-md"
+      class="mission-box text-center max-w-4xl mx-auto mb-32 border border-muted p-8 py-16 md:p-24 rounded-[3rem] md:rounded-full opacity-0 scale-[0.9] blur-md"
     >
       <h2
         class="font-serif text-3xl md:text-5xl leading-tight mb-0 italic font-medium"

@@ -222,7 +222,7 @@
 
     <!-- Benefits Section -->
     <section
-      class="benefits-section w-full bg-secondary/20 py-32 rounded-[4rem] px-8 mb-20 opacity-0 scale-[0.98]"
+      class="benefits-section w-full bg-secondary/20 py-16 md:py-32 rounded-[2.5rem] md:rounded-[4rem] px-4 md:px-8 mb-20 opacity-0 scale-[0.98]"
     >
       <div
         class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-16 text-center"

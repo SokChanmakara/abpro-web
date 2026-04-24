@@ -1,10 +1,9 @@
 <template>
   <nav
     ref="navbar"
-    class="fixed top-0 left-0 right-0 z-50 transition-all duration-700 bg-transparent py-8 px-8"
+    class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 px-6 lg:px-8 bg-background/95 backdrop-blur-xl border-b border-muted/20 shadow-sm py-4"
     :class="{
-      'py-4 bg-background/90 backdrop-blur-xl border-b border-muted/20 shadow-sm':
-        isScrolled,
+      'lg:bg-background lg:backdrop-blur-none lg:border-transparent lg:shadow-none lg:py-8': !isScrolled
     }"
   >
     <div class="max-w-7xl mx-auto flex items-center justify-between">
@@ -61,7 +60,7 @@
       </div>
 
       <!-- Right Actions -->
-      <div class="flex items-center gap-8">
+      <div class="flex items-center gap-4 md:gap-8 z-50">
         <!-- Language -->
         <button
           class="hidden sm:flex items-center gap-2 text-[10px] tracking-[0.2em] font-sans uppercase opacity-60 hover:opacity-100 transition-opacity"
@@ -74,7 +73,7 @@
         <!-- CTA -->
         <NuxtLink
           to="/contact"
-          class="group bg-foreground text-primary-foreground px-8 py-3 rounded-full text-[10px] tracking-[0.2em] uppercase hover:bg-primary hover:text-foreground transition-all duration-500 shadow-xl shadow-foreground/5 flex items-center gap-2"
+          class="hidden md:flex group bg-foreground text-primary-foreground px-8 py-3 rounded-full text-[10px] tracking-[0.2em] uppercase hover:bg-primary hover:text-foreground transition-all duration-500 shadow-xl shadow-foreground/5 items-center gap-2"
         >
           Contact
           <svg
@@ -93,6 +92,41 @@
             <path d="m12 5 7 7-7 7" />
           </svg>
         </NuxtLink>
+
+        <!-- Mobile Menu Toggle -->
+        <button 
+          class="lg:hidden flex flex-col justify-center items-center w-10 h-10 gap-[5px] relative"
+          @click="isMobileMenuOpen = !isMobileMenuOpen"
+        >
+          <span class="w-6 h-[2px] bg-foreground transition-all duration-300" :class="{ 'rotate-45 translate-y-[7px]': isMobileMenuOpen }"></span>
+          <span class="w-6 h-[2px] bg-foreground transition-all duration-300" :class="{ 'opacity-0': isMobileMenuOpen }"></span>
+          <span class="w-6 h-[2px] bg-foreground transition-all duration-300" :class="{ '-rotate-45 -translate-y-[7px]': isMobileMenuOpen }"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu Overlay -->
+    <div 
+      class="fixed inset-0 w-full h-[100dvh] bg-background z-40 transition-all duration-500 lg:hidden flex flex-col items-center justify-center"
+      :class="isMobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'"
+    >
+      <div class="flex flex-col items-center gap-8 text-center" :class="{ 'translate-y-0 opacity-100': isMobileMenuOpen, 'translate-y-8 opacity-0': !isMobileMenuOpen }" style="transition: all 0.5s ease-out 0.1s;">
+        <NuxtLink
+          v-for="link in navLinks"
+          :key="link.to"
+          :to="link.to"
+          class="font-serif text-4xl hover:text-primary transition-colors"
+          @click="isMobileMenuOpen = false"
+        >
+          {{ link.label }}
+        </NuxtLink>
+        <NuxtLink
+          to="/contact"
+          class="mt-8 font-sans text-[10px] font-bold tracking-[0.2em] uppercase bg-foreground text-background px-10 py-5 rounded-full shadow-xl shadow-foreground/10"
+          @click="isMobileMenuOpen = false"
+        >
+          Contact Us
+        </NuxtLink>
       </div>
     </div>
   </nav>
@@ -101,6 +135,12 @@
 <script setup>
 const { createAnimation, ScrollTrigger } = useGSAP();
 const isScrolled = ref(false);
+const isMobileMenuOpen = ref(false);
+
+const route = useRoute();
+watch(() => route.path, () => {
+  isMobileMenuOpen.value = false;
+});
 
 const navLinks = [
   { to: "/", label: "Home" },

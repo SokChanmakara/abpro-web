@@ -124,7 +124,7 @@
 
       <!-- Contact Form Side -->
       <div
-        class="md:col-span-7 bg-white p-10 md:p-16 rounded-[4rem] shadow-soft-xl border border-muted/30 contact-reveal-right opacity-0 translate-y-12 relative overflow-hidden"
+        class="md:col-span-7 bg-white p-8 md:p-16 rounded-[2.5rem] md:rounded-[4rem] shadow-soft-xl border border-muted/30 contact-reveal-right opacity-0 translate-y-12 relative overflow-hidden"
       >
         <!-- Floating organic shape for texture -->
         <div
