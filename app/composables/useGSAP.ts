@@ -18,7 +18,6 @@ export const useGSAP = () => {
     if (!process.client) return
     
     animations.forEach(ctx => ctx.revert())
-    ScrollTrigger.getAll().forEach(t => t.kill())
   })
 
   return {

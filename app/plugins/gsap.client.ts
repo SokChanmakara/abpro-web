@@ -27,7 +27,17 @@ export default defineNuxtPlugin(() => {
 
     gsap.ticker.lagSmoothing(0)
 
-    // Provide lenis to the app
+    // Handle route changes
+    const router = useRouter()
+    router.afterEach(() => {
+      // Small delay to allow DOM to update
+      setTimeout(() => {
+        lenis.scrollTo(0, { immediate: true })
+        ScrollTrigger.refresh()
+      }, 100)
+    })
+
+    // Provide to the app
     return {
       provide: {
         gsap,

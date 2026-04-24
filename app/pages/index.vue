@@ -4,15 +4,22 @@
     class="relative z-10 flex flex-col items-center pt-20 md:pt-32 px-6"
   >
     <!-- Hero Section -->
-
-    <!-- Hero Heading -->
-    <div class="max-w-5xl text-center mb-16 px-4">
+    <!-- Hero Heading (Masked Reveal) -->
+    <div class="max-w-6xl text-center mb-16 px-4">
       <h1
-        class="hero-element font-serif text-6xl md:text-8xl lg:text-9xl tracking-tight leading-[0.95] mb-8 text-foreground opacity-0"
+        class="font-serif text-6xl md:text-8xl lg:text-9xl tracking-tight leading-[0.95] mb-8 text-foreground"
       >
-        Pure. <span class="italic font-medium text-primary">Botanical.</span
-        ><br />
-        Grounded Excellence.
+        <div class="overflow-hidden py-2">
+          <div class="hero-line opacity-0 translate-y-full">
+            Pure.
+            <span class="italic font-medium text-primary">Botanical.</span>
+          </div>
+        </div>
+        <div class="overflow-hidden py-2">
+          <div class="hero-line opacity-0 translate-y-full">
+            Grounded Excellence.
+          </div>
+        </div>
       </h1>
 
       <p
@@ -58,7 +65,7 @@
 
     <!-- Large Product Visual -->
     <div
-      class="relative w-full max-w-6xl mx-auto mt-20 opacity-0 translate-y-12 hero-visual"
+      class="relative w-full max-w-6xl mx-auto mt-20 opacity-0 translate-y-12 hero-visual scale-95 blur-md"
     >
       <div
         class="parallax-container relative aspect-[16/9] md:aspect-[21/9] overflow-hidden rounded-[2.5rem] md:rounded-[4rem] shadow-2xl shadow-primary/5 group"
@@ -311,29 +318,57 @@
 const { gsap, ScrollTrigger, createAnimation } = useGSAP();
 
 createAnimation((ctx) => {
-  // Hero Animation
+  // Hero Timeline
   const tl = gsap.timeline({
-    defaults: { ease: "expo.out", duration: 1.5 },
+    defaults: { ease: "expo.out", duration: 1.8 },
   });
 
-  tl.to(".hero-element", {
+  // 1. Badge Reveal
+  tl.to(".hero-element:first-child", {
     opacity: 1,
     y: 0,
-    stagger: 0.2,
-    delay: 0.5,
+    duration: 1.2,
   });
 
+  // 2. Elite Masked Headline Reveal
+  tl.to(
+    ".hero-line",
+    {
+      opacity: 1,
+      y: 0,
+      stagger: 0.15,
+      duration: 2,
+      ease: "power4.out",
+    },
+    "-=0.8",
+  );
+
+  // 3. Subtext and Buttons
+  tl.to(
+    ".hero-element:not(:first-child)",
+    {
+      opacity: 1,
+      y: 0,
+      stagger: 0.2,
+    },
+    "-=1.4",
+  );
+
+  // 4. Hero Image (Blur + Scale + Parallax)
   tl.to(
     ".hero-visual",
     {
       opacity: 1,
       y: 0,
-      duration: 1.8,
+      scale: 1,
+      filter: "blur(0px)",
+      duration: 2.5,
+      ease: "expo.inOut",
     },
-    "-=1.2",
+    "-=1.8",
   );
 
-  // Hero Image Reveal & Parallax
+  // Parallax Effect
   gsap.to(".parallax-img", {
     yPercent: 15,
     ease: "none",
@@ -345,29 +380,29 @@ createAnimation((ctx) => {
     },
   });
 
-  // Featured Product Cards
+  // Product Cards Reveal
   gsap.to(".product-card", {
     opacity: 1,
     y: 0,
     stagger: 0.3,
-    duration: 1.2,
+    duration: 1.5,
     ease: "power3.out",
     scrollTrigger: {
       trigger: ".product-grid",
-      start: "top 80%",
+      start: "top 85%",
       toggleActions: "play none none none",
     },
   });
 
-  // Benefits Section
+  // Benefits Section Reveal
   gsap.to(".benefits-section", {
     opacity: 1,
     scale: 1,
-    duration: 1.5,
+    duration: 2,
     ease: "expo.out",
     scrollTrigger: {
       trigger: ".benefits-section",
-      start: "top 85%",
+      start: "top 90%",
     },
   });
 
@@ -375,11 +410,11 @@ createAnimation((ctx) => {
     opacity: 1,
     y: 0,
     stagger: 0.2,
-    duration: 1,
+    duration: 1.2,
     ease: "power2.out",
     scrollTrigger: {
       trigger: ".benefits-section",
-      start: "top 70%",
+      start: "top 75%",
     },
   });
 });
