@@ -1,5 +1,6 @@
 <template>
   <div id="paper-texture"></div>
+  <AppLoader />
   <NuxtLayout>
     <NuxtPage />
   </NuxtLayout>
