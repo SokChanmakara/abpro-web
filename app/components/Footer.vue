@@ -12,7 +12,7 @@
     >
       <div class="col-span-1 md:col-span-2">
         <h2 class="text-3xl font-serif text-background mb-6">
-          Angel-Boss Group Co., Ltd
+          Angel Boss Group Co., Ltd
         </h2>
         <p class="max-w-xs leading-relaxed opacity-60 mb-8">
           Sourcing the finest global botanical wonders and coffee beans to

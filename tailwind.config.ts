@@ -1,7 +1,12 @@
-/** @type {import('tailwindcss').Config} */
-export default {
+import type { Config } from 'tailwindcss'
+
+const config: Config = {
   content: [
     "./app/**/*.{vue,js,ts,jsx,tsx}",
+    "./app/components/**/*.{vue,js,ts}",
+    "./app/layouts/**/*.vue",
+    "./app/pages/**/*.vue",
+    "./app/app.vue",
     "./plugins/**/*.{js,ts}",
     "./nuxt.config.{js,ts}",
   ],
@@ -9,9 +14,9 @@ export default {
     extend: {
       colors: {
         background: "#F9F8F4",
-        foreground: "#99ca51",
+        foreground: "#2D3A31",
         primary: {
-          DEFAULT: "#2f9a46",
+          DEFAULT: "#8C9A84",
           foreground: "#F9F8F4",
         },
         secondary: {
@@ -19,7 +24,13 @@ export default {
           foreground: "#2D3A31",
         },
         muted: "#E6E2DA",
-        interactive: "#cdb62d",
+        interactive: "#baa00f",
+      },
+      boxShadow: {
+        soft: "0 4px 6px -1px rgba(45, 58, 49, 0.05)",
+        "soft-md": "0 10px 15px -3px rgba(45, 58, 49, 0.05)",
+        "soft-lg": "0 20px 40px -10px rgba(45, 58, 49, 0.05)",
+        "soft-xl": "0 25px 50px -12px rgba(45, 58, 49, 0.15)",
       },
       fontFamily: {
         serif: ['"Playfair Display"', "serif"],
@@ -48,3 +59,5 @@ export default {
   },
   plugins: [],
 };
+
+export default config

@@ -31,7 +31,7 @@
           class="relative px-6 py-2 rounded-full transition-all duration-500 overflow-hidden group"
           :class="[
             $route.path === link.to
-              ? 'bg-primary text-background shadow-lg shadow-primary/20'
+              ? 'bg-interactive text-background shadow-lg shadow-primary/20'
               : 'hover:bg-primary/5 text-foreground/70 hover:text-primary',
           ]"
         >
@@ -62,7 +62,7 @@
         <!-- CTA -->
         <NuxtLink
           to="/contact"
-          class="group bg-foreground text-background px-10 py-3.5 rounded-full text-xs tracking-[0.2em] uppercase hover:bg-interactive hover:text-foreground transition-all duration-500 shadow-xl shadow-foreground/5 flex items-center gap-2"
+          class="group bg-foreground text-primary-foreground px-10 py-3.5 rounded-full text-xs tracking-[0.2em] uppercase hover:bg-primary hover:text-foreground transition-all duration-500 shadow-xl shadow-foreground/5 flex items-center gap-2"
         >
           Contact Us
           <svg
