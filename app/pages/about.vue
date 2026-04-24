@@ -22,7 +22,7 @@
       </div>
       <div class="md:col-span-7 order-1 md:order-2 animate-fade-up" style="animation-delay: 400ms">
         <div class="relative aspect-[4/5] rounded-t-full overflow-hidden shadow-2xl shadow-primary/5 border border-muted">
-          <img src="/hero-product.png" alt="Our Source" class="w-full h-full object-cover" />
+          <img src="/images/about/philosophy-hero.png" alt="Our Source" class="w-full h-full object-cover" />
         </div>
       </div>
     </div>

@@ -52,7 +52,7 @@
     <div class="relative w-full max-w-6xl mx-auto mt-20 animate-fade-up fill-mode-forwards" style="animation-delay: 700ms">
       <div class="relative aspect-[16/9] md:aspect-[21/9] overflow-hidden rounded-[2.5rem] md:rounded-[4rem] shadow-2xl shadow-primary/5 group">
         <img 
-          src="/hero-product.png" 
+          src="/images/home/hero-hero.png" 
           alt="ABPro Botanical Products" 
           class="w-full h-full object-cover scale-[1.02] group-hover:scale-100 transition-transform duration-[2000ms] ease-out"
         />
@@ -82,7 +82,7 @@
         <!-- Coffee Featured -->
         <div class="group cursor-pointer">
           <div class="relative aspect-square overflow-hidden rounded-[2rem] mb-8 bg-secondary/30">
-            <img src="/products/coffee-dark-roast.png" alt="Premium Coffee" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+            <img src="/images/home/featured-coffee.png" alt="Premium Coffee" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
             <div class="absolute top-6 left-6 bg-background/90 backdrop-blur-sm px-4 py-1.5 rounded-full text-[10px] tracking-widest uppercase font-semibold">Roasted in Cambodia</div>
           </div>
           <h3 class="font-serif text-2xl mb-2">Mekong Highland Dark Roast</h3>
@@ -96,7 +96,7 @@
         <!-- Supplement Featured -->
         <div class="group cursor-pointer translate-y-12 md:translate-y-24">
           <div class="relative aspect-square overflow-hidden rounded-[2rem] mb-8 bg-secondary/30">
-            <img src="/products/supplement-immunity.png" alt="Immunity Supplement" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+            <img src="/images/home/featured-supplement.png" alt="Immunity Supplement" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
             <div class="absolute top-6 left-6 bg-background/90 backdrop-blur-sm px-4 py-1.5 rounded-full text-[10px] tracking-widest uppercase font-semibold">Pure Botanical</div>
           </div>
           <h3 class="font-serif text-2xl mb-2">Immunity & Focus Ritual</h3>

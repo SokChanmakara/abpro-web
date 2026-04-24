@@ -68,7 +68,7 @@ const products = [
     description: 'A bold, smoky blend with deep chocolate notes and a velvet crema. Sourced from the volcanic soils of the Mekong Highlands.',
     price: '$18.00',
     origin: 'Cambodia',
-    image: '/products/coffee-dark-roast.png'
+    image: '/images/products/mekong-dark-roast.png'
   },
   {
     id: 2,
@@ -78,7 +78,7 @@ const products = [
     description: 'A potent blend of organic Ashwagandha and Moringa designed to sharpen cognition and fortify your natural defenses.',
     price: '$45.00',
     origin: 'Imported',
-    image: '/products/supplement-immunity.png'
+    image: '/images/products/immunity-focus.png'
   },
   {
     id: 3,
@@ -88,7 +88,7 @@ const products = [
     description: 'Floral and bright with notes of jasmine and wild honey. Perfect for a mindful morning pour-over.',
     price: '$22.00',
     origin: 'Imported',
-    image: '/hero-product.png' // Reusing the hero image as placeholder
+    image: '/images/products/cloud-forest.png' // Reusing the hero image as placeholder
   },
   {
     id: 4,
@@ -98,7 +98,7 @@ const products = [
     description: 'Sustainably sourced marine collagen with added botanical antioxidants for skin, hair, and joint longevity.',
     price: '$58.00',
     origin: 'Imported',
-    image: '/products/supplement-immunity.png' 
+    image: '/images/products/collagen.png' 
   },
   {
     id: 5,
@@ -108,7 +108,7 @@ const products = [
     description: 'Smooth and balanced with a nutty finish. The perfect companion for a productive workday.',
     price: '$16.00',
     origin: 'Cambodia',
-    image: '/products/coffee-dark-roast.png'
+    image: '/images/products/breakfast-blend.png'
   }
 ]
 

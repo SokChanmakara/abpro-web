@@ -12,7 +12,7 @@
           class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center group-hover:scale-110 transition-transform"
         >
           <img
-            src="/logo/angelboss-logo.jpg"
+            src="/images/shared/logo.jpg"
             alt="company logo"
             class="w-8 h-8 rounded-full object-cover"
           />

@@ -16,7 +16,7 @@ const config: Config = {
         background: "#F9F8F4",
         foreground: "#2D3A31",
         primary: {
-          DEFAULT: "#8C9A84",
+          DEFAULT: "#5a7b74",
           foreground: "#F9F8F4",
         },
         secondary: {

@@ -11,7 +11,7 @@
       <div class="relative grid grid-cols-1 md:grid-cols-12 gap-12 items-center bg-secondary/10 rounded-[3rem] p-8 md:p-12 overflow-hidden border border-muted">
         <div class="md:col-span-7">
           <div class="aspect-[16/9] rounded-[2rem] overflow-hidden">
-            <img src="/hero-product.png" alt="Coffee benefits" class="w-full h-full object-cover" />
+            <img src="/images/blog/science-coffee.png" alt="Coffee benefits" class="w-full h-full object-cover" />
           </div>
         </div>
         <div class="md:col-span-5">
@@ -48,21 +48,21 @@ const posts = [
     title: 'Ashwagandha: Nature\'s Stress Shield',
     category: 'Supplements',
     excerpt: 'Exploring the ancient roots of this powerful adaptogen and its modern clinical benefits for anxiety.',
-    image: '/products/supplement-immunity.png'
+    image: '/images/blog/ashwagandha.png'
   },
   {
     id: 2,
     title: 'Dark vs Light Roast: Which has more Caffeine?',
     category: 'Coffee',
     excerpt: 'Common myths debunked about roast profiles and their impact on your energy levels.',
-    image: '/products/coffee-dark-roast.png'
+    image: '/images/blog/dark-vs-light.png'
   },
   {
     id: 3,
     title: 'Mindful Sourcing in the Mekong Highlands',
     category: 'Sustainability',
     excerpt: 'A deep dive into our partnership with local farmers and our commitment to the Cambodian land.',
-    image: '/hero-product.png'
+    image: '/images/blog/sourcing.png'
   }
 ]
 </script>
