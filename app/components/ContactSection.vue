@@ -1,10 +1,14 @@
 <template>
-  <section class="max-w-7xl mx-auto px-6 mb-48">
+  <section class="max-w-7xl mx-auto px-6 mb-48 contact-container">
     <div class="grid grid-cols-1 md:grid-cols-12 gap-20 items-start">
       <!-- Contact Details Side -->
-      <div class="md:col-span-5 animate-fade-up" style="animation-delay: 200ms">
+      <div class="md:col-span-5 contact-reveal-left opacity-0 translate-y-12">
         <h2 class="font-serif text-5xl md:text-6xl mb-16 leading-tight">
-          Get in <span class="italic text-primary">Touch</span>
+          <div class="overflow-hidden py-2">
+            <div class="contact-header-line opacity-0 translate-y-full">
+              Get in <span class="italic text-primary">Touch</span>
+            </div>
+          </div>
         </h2>
 
         <div
@@ -120,8 +124,7 @@
 
       <!-- Contact Form Side -->
       <div
-        class="md:col-span-7 bg-white p-10 md:p-16 rounded-[4rem] shadow-soft-xl border border-muted/30 animate-fade-up relative overflow-hidden"
-        style="animation-delay: 400ms"
+        class="md:col-span-7 bg-white p-10 md:p-16 rounded-[4rem] shadow-soft-xl border border-muted/30 contact-reveal-right opacity-0 translate-y-12 relative overflow-hidden"
       >
         <!-- Floating organic shape for texture -->
         <div
@@ -205,6 +208,40 @@
     </div>
   </section>
 </template>
+
+<script setup>
+const { gsap, ScrollTrigger, createAnimation } = useGSAP();
+
+createAnimation(() => {
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".contact-container",
+      start: "top 80%",
+    }
+  });
+
+  tl.to(".contact-header-line", {
+    opacity: 1,
+    y: 0,
+    duration: 1.5,
+    ease: "power4.out",
+  });
+
+  tl.to(".contact-reveal-left", {
+    opacity: 1,
+    y: 0,
+    duration: 1.5,
+    ease: "expo.out",
+  }, "-=1.2");
+
+  tl.to(".contact-reveal-right", {
+    opacity: 1,
+    y: 0,
+    duration: 1.5,
+    ease: "expo.out",
+  }, "-=1.3");
+});
+</script>
 
 <style scoped>
 /* Custom style for the select arrow */
