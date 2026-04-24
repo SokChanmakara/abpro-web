@@ -173,25 +173,6 @@ Use:
 - ✅ Warm coffee tones (brown, beige)
 - ✅ Health colors (green, white)
 
----
-
-## ⚙️ Tech Stack
-
-### Frontend
-
-- Vue.js
-
-### Backend (Optional)
-
-- FastAPI
-
-### Alternative (Simple Start)
-
-- Static website + contact links
-- Add backend later if needed
-
----
-
 ## 🧠 Business Strategy
 
 Focus on:
