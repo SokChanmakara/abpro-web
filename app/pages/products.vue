@@ -17,21 +17,27 @@
       </p>
     </header>
 
-    <!-- Filters -->
-    <div class="flex justify-center gap-4 mb-20">
-      <button
-        v-for="(cat, index) in categories"
+    <!-- Filters (Elite Masked Reveal) -->
+    <div class="flex flex-wrap justify-center gap-4 mb-20">
+      <div
+        v-for="cat in categories"
         :key="cat.id"
-        @click="activeCategory = cat.id"
-        class="filter-button opacity-0 translate-y-4 px-8 py-3 rounded-full text-xs tracking-widest uppercase transition-all duration-500"
-        :class="[
-          activeCategory === cat.id
-            ? 'bg-foreground text-background shadow-xl shadow-foreground/10'
-            : 'bg-secondary/20 hover:bg-secondary/40',
-        ]"
+        class="overflow-hidden py-6 px-4 -my-6 -mx-4"
       >
-        {{ cat.name }}
-      </button>
+        <div class="filter-wrapper opacity-0 translate-y-full">
+          <button
+            @click="activeCategory = cat.id"
+            class="px-14 py-6 rounded-full font-sans tracking-[0.2em] text-[10px] uppercase transition-all duration-500 flex items-center justify-center gap-3 lg:text-xs"
+            :class="[
+              activeCategory === cat.id
+                ? 'bg-foreground text-secondary shadow-2xl shadow-foreground/10'
+                : 'bg-secondary/20 text-foreground/60 hover:bg-secondary/40',
+            ]"
+          >
+            {{ cat.name }}
+          </button>
+        </div>
+      </div>
     </div>
 
     <!-- Product Grid -->
@@ -93,7 +99,7 @@
 
 <script setup>
 import { ref, computed } from "vue";
-const { gsap, createAnimation } = useGSAP();
+const { gsap, ScrollTrigger, createAnimation } = useGSAP();
 
 const activeCategory = ref("all");
 
@@ -170,36 +176,38 @@ const filteredProducts = computed(() => {
 createAnimation(() => {
   const tl = gsap.timeline({
     defaults: { ease: "expo.out", duration: 1.8 },
+    delay: 0.2 // Wait for page transition to avoid masking the start of the animation
   });
 
   tl.to(".header-line", {
     opacity: 1,
     y: 0,
-    duration: 2,
+    duration: 1.8,
     ease: "power4.out",
   });
+
+  tl.to(
+    ".filter-wrapper",
+    {
+      opacity: 1,
+      y: 0,
+      stagger: 0.1,
+      duration: 1.2,
+      ease: "expo.out",
+    },
+    "-=1.2",
+  );
 
   tl.to(
     ".header-element",
     {
       opacity: 1,
       y: 0,
-      duration: 1.5,
+      duration: 1.2,
     },
     "-=1.4",
   );
-
-  tl.to(
-    ".filter-button",
-    {
-      opacity: 1,
-      y: 0,
-      stagger: 0.3,
-      duration: 0.2,
-    },
-    "-=1.2",
-  );
-});
+})
 
 // Transition Handlers for the Grid
 const onBeforeEnter = (el) => {

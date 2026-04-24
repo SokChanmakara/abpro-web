@@ -1,25 +1,33 @@
 <template>
   <main class="relative z-10 pt-20 px-6 max-w-7xl mx-auto">
     <!-- Header -->
-    <header class="text-center mb-32 animate-fade-up">
-      <h1 class="font-serif text-6xl md:text-8xl mb-8">Trusted by the <span class="italic text-primary">Community</span></h1>
-      <p class="text-xl text-foreground/60 max-w-2xl mx-auto">Join thousands of conscious individuals in Cambodia who have elevated their ritual with AB-PRO.</p>
+    <header class="text-center mb-32">
+      <h1 class="font-serif text-6xl md:text-8xl mb-8">
+        <div class="overflow-hidden py-2">
+          <div class="header-line opacity-0 translate-y-full">
+            Trusted by the <span class="italic text-primary">Community</span>
+          </div>
+        </div>
+      </h1>
+      <p class="header-element opacity-0 text-xl text-foreground/60 max-w-2xl mx-auto">
+        Join thousands of conscious individuals in Cambodia who have elevated their ritual with AB-PRO.
+      </p>
     </header>
 
     <!-- Trust Stats -->
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-32 animate-fade-up" style="animation-delay: 200ms">
-      <div v-for="stat in stats" :key="stat.label" class="bg-secondary/10 p-8 rounded-[2.5rem] text-center border border-muted/50">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-32 stats-grid">
+      <div v-for="stat in stats" :key="stat.label" class="stat-card opacity-0 translate-y-8 bg-secondary/10 p-8 rounded-[2.5rem] text-center border border-muted/50">
         <div class="text-4xl font-serif text-primary mb-2">{{ stat.value }}</div>
         <div class="text-[10px] tracking-[0.2em] uppercase opacity-40">{{ stat.label }}</div>
       </div>
     </div>
 
     <!-- Reviews Grid -->
-    <div class="columns-1 md:columns-2 lg:columns-3 gap-8 animate-fade-up" style="animation-delay: 400ms">
+    <div class="columns-1 md:columns-2 lg:columns-3 gap-8 reviews-grid">
       <div 
         v-for="review in reviews" 
         :key="review.id"
-        class="inline-block w-full mb-8 bg-white/40 backdrop-blur-md border border-muted p-10 rounded-[2.5rem] hover:shadow-xl transition-shadow"
+        class="review-card opacity-0 translate-y-12 inline-block w-full mb-8 bg-white/40 backdrop-blur-md border border-muted p-10 rounded-[2.5rem] hover:shadow-xl transition-shadow"
       >
         <div class="flex items-center gap-4 mb-8">
           <div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center font-serif text-primary text-xl">
@@ -43,7 +51,7 @@
     </div>
 
     <!-- Call to action -->
-    <section class="mt-32 mb-48 text-center animate-fade-up">
+    <section class="cta-section mt-32 mb-48 text-center opacity-0 translate-y-12">
       <h2 class="font-serif text-4xl mb-10">Start your ritual today.</h2>
       <NuxtLink to="/products" class="bg-foreground text-secondary px-14 py-6 rounded-full font-sans tracking-[0.2em] text-xs uppercase hover:bg-interactive transition-all duration-500 inline-block">
         Browse the Collection
@@ -53,6 +61,8 @@
 </template>
 
 <script setup>
+const { gsap, ScrollTrigger, createAnimation } = useGSAP()
+
 const stats = [
   { value: '5,000+', label: 'Happy Customers' },
   { value: '50+', label: 'Premium Products' },
@@ -104,4 +114,61 @@ const reviews = [
     product: 'Ancient Forest Collagen'
   }
 ]
+
+createAnimation(() => {
+  const tl = gsap.timeline({
+    defaults: { ease: 'expo.out', duration: 1.8 }
+  })
+
+  tl.to('.header-line', {
+    opacity: 1,
+    y: 0,
+    duration: 2,
+    ease: 'power4.out'
+  })
+
+  tl.to('.header-element', {
+    opacity: 1,
+    y: 0,
+    duration: 1.5
+  }, '-=1.4')
+
+  // Stats reveal
+  gsap.to('.stat-card', {
+    opacity: 1,
+    y: 0,
+    stagger: 0.1,
+    duration: 1.2,
+    ease: 'expo.out',
+    scrollTrigger: {
+      trigger: '.stats-grid',
+      start: 'top 85%'
+    }
+  })
+
+  // Reviews reveal
+  gsap.to('.review-card', {
+    opacity: 1,
+    y: 0,
+    stagger: 0.15,
+    duration: 1.5,
+    ease: 'power3.out',
+    scrollTrigger: {
+      trigger: '.reviews-grid',
+      start: 'top 80%'
+    }
+  })
+
+  // CTA Section
+  gsap.to('.cta-section', {
+    opacity: 1,
+    y: 0,
+    duration: 1.5,
+    ease: 'expo.out',
+    scrollTrigger: {
+      trigger: '.cta-section',
+      start: 'top 90%'
+    }
+  })
+})
 </script>
