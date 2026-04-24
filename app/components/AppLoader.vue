@@ -3,6 +3,7 @@
     <div
       v-if="mounted"
       ref="loaderRef"
+      data-loader
       class="fixed inset-0 z-[100] bg-background flex items-center justify-center origin-center"
     >
       <div class="relative flex flex-col items-center">
@@ -50,6 +51,7 @@
               width="60"
               height="55"
               fill="#4A3125"
+              class="translate-y-[60px]"
             />
           </g>
 
@@ -61,6 +63,7 @@
             stroke-width="3"
             stroke-linejoin="round"
             stroke-linecap="round"
+            class="opacity-0 translate-y-[20px]"
           />
           <ellipse
             ref="rimRef"
@@ -71,6 +74,7 @@
             fill="#F9F8F4"
             stroke="#2D3A31"
             stroke-width="3"
+            class="opacity-0 translate-y-[20px]"
           />
           <path
             ref="handleRef"
@@ -79,12 +83,13 @@
             stroke="#2D3A31"
             stroke-width="3"
             stroke-linecap="round"
+            class="opacity-0 -translate-x-[10px]"
           />
         </svg>
 
         <div
           ref="textRef"
-          class="mt-8 font-serif text-foreground text-sm tracking-widest uppercase opacity-0"
+          class="mt-8 font-serif text-foreground text-sm tracking-widest uppercase opacity-0 translate-y-[6px]"
         >
           Brewing
         </div>
