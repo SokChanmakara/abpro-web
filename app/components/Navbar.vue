@@ -17,7 +17,7 @@
             class="w-8 h-8 rounded-full object-cover"
           />
         </div>
-        <span class="mt-1">ANGEL BOSS</span>
+        <span class="mt-1">ANGEL BOSS Co., Ltd</span>
       </NuxtLink>
 
       <!-- Navigation Links (Centered) -->

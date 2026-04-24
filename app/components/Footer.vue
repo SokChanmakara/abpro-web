@@ -14,9 +14,10 @@
         <h2 class="text-3xl font-serif text-background mb-6">
           Angel Boss Group Co., Ltd
         </h2>
-        <p class="max-w-xs leading-relaxed opacity-60 mb-8">
-          Sourcing the finest global botanical wonders and coffee beans to
-          elevate the health and lifestyle of Cambodia.
+        <p class="max-w-xs leading-relaxed opacity-90 mb-8">
+          Angel Boss Group Co., Ltd.a 100% Cambodian-owned MLM. Our mission is to empower our community by providing financial opportunities that stay within Cambodia.
+
+After 14 years under a foreign brand, we have taken control of our destiny since 2024. With a focus on local ownership, we ensure that decisions are made by leaders who understand our culture and challenges.
         </p>
         <div class="flex gap-6">
           <a
@@ -136,7 +137,7 @@
                 d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
               />
             </svg>
-            +855 12 345 678
+            +855 78 510 975
           </li>
           <li class="flex items-center gap-3">
             <svg
@@ -172,6 +173,7 @@
               <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
               <circle cx="12" cy="10" r="3" />
             </svg>
+            St 154, Sangkat Phsar Thmey,<br />
             Phnom Penh, Cambodia
           </li>
         </ul>
