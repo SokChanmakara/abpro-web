@@ -183,7 +183,7 @@ After 14 years under a foreign brand, we have taken control of our destiny since
     <div
       class="max-w-7xl mx-auto border-t border-background/10 mt-20 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] tracking-widest uppercase opacity-40"
     >
-      <p>&copy; 2024 AB-PRO Cambodia. All rights reserved.</p>
+      <p>&copy; 2026 AB-PRO Cambodia. All rights reserved.</p>
       <div class="flex gap-8">
         <a href="#">Privacy Policy</a>
         <a href="#">Terms of Service</a>
